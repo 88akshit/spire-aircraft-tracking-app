@@ -2,13 +2,15 @@
 
 **Use case**
 
-![Alt text](airsafeTracking/airsafeTracking/static/assets/home.png "Title")
+
 
 Connect to Spire’s AirSafe Tracking Stream API. Read the data for at least 10 minutes and perform the following processing steps:
 
 ● Create a positional density map with resolution 0.1x0.1 deg. Use fields latitude and longitude to determine the position of the aircraft. Suggest an appropriate way of presenting the map.
 
 ● Analyze number of target updates per aircraft (identified by icao_address field). Report the number of aircraft in the data sample, average number of target updates per aircraft and aircraft with smallest and biggest number of target updates.
+
+![Alt text](airsafeTracking/airsafeTracking/static/assets/home.png "Title")
 
 ![Alt text](airsafeTracking/airsafeTracking/static/assets/detailsPage.png "Title")
 
