@@ -1,6 +1,8 @@
 # spire-aircraft-tracking-app
 
-Use case
+**Use case**
+
+![Alt text](airsafeTracking/airsafeTracking/static/assets/home.png "Title")
 
 Connect to Spire’s AirSafe Tracking Stream API. Read the data for at least 10 minutes and perform the following processing steps:
 
@@ -8,8 +10,14 @@ Connect to Spire’s AirSafe Tracking Stream API. Read the data for at least 10 
 
 ● Analyze number of target updates per aircraft (identified by icao_address field). Report the number of aircraft in the data sample, average number of target updates per aircraft and aircraft with smallest and biggest number of target updates.
 
+![Alt text](airsafeTracking/airsafeTracking/static/assets/detailsPage.png "Title")
 
-Framework Used
+The above image shows pins which indicate the current position of aircraft in the map. The blue coloured pins are aircraft with normal target updates. The red coloured pins are with least target updates and green with most target updates
+
+
+
+
+**Framework Used**
 
 •	Django 4.0.3 (Backend) – Python 3.10
 
@@ -17,7 +25,7 @@ Framework Used
 
 Database: SQLite 3
 
-How to Run the App?
+**How to Run the App?**
 
 Please install the below prerequisites for macOS to run application
 
@@ -36,7 +44,7 @@ Requirements:
 
 5. After executing the above commands run “python3 manage.py runserver” to start the application. Access application  at http://127.0.0.1:8000/ 
 	
-Workflow
+**Workflow**
 
 User can go to the website to view the last 10 minutes Aircraft  Target Updates. A countdown timer is shown  in UI which indicate how long user needs to wait to get the last 10 minutes processed target updates of aircraft from current time . The UI shows the below aircraft stats by analysing the target updates
 
@@ -48,15 +56,18 @@ User can go to the website to view the last 10 minutes Aircraft  Target Updates.
 
 
 
- Backend Workflow
+**Backend Workflow**
 
 •	An aircraft model is used to store “icao_address”, longitude and latitude of aircraft. 
-•	Spire’s AirSafe Tracking Stream API is used to get the target updates of aircraft every 10 minutes. 
-•	Position token is used to get the continuous target updates from stream to avoid losing any messages 
-•	Django’s database cache mechanism is used to store position token , last data sync time and updates available value to get latest updates.
-•	Core Main File  & Function setResponse(time) & streamData(): airsafeTracking/airsafeTrackingSystem/views.py 
 
-REST API Request & Response
+•	Spire’s AirSafe Tracking Stream API is used to get the target updates of aircraft every 10 minutes. 
+
+•	Position token is used to get the continuous target updates from stream to avoid losing any messages 
+
+•	Django’s database cache mechanism is used to store position token , last data sync time and updates available value to get latest updates.
+
+
+**REST API Request & Response**
 
 GET: http://127.0.0.1:8000/v1/targets/aircrafts
 
