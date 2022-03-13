@@ -1,0 +1,30 @@
+/* styles are loaded the Shared CSS file located at:
+https://static.infragistics.com/xplatform/css/samples/
+*/
+.count-down{
+    padding-right: 34px;
+    padding-top: 70px;
+}
+
+.detail-card{
+    padding-top: 50px;
+  }
+  
+  .details-data{
+    font-size: 10px;
+    display: inline-flex;
+    padding-right: 43px;
+    padding-bottom: 10px;
+  }
+
+  .timer {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 1.4em;
+    letter-spacing: -1px;
+    padding-top: 50px;
+  }
+  .timer span {
+    font-size: 2em;
+    margin: 0 3px 0 15px;
+  }

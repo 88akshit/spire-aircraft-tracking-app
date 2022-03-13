@@ -1,0 +1,60 @@
+
+<div class="container">
+    <div class="row">     
+      <div class="col-sm-8">
+        <div class="container sample">
+            <igx-geographic-map #map
+                width="1300px"
+                height="800px"
+                zoomable="true" >
+            </igx-geographic-map>
+        
+            <ng-template let-series="series" let-item="item" #template>
+                <div>
+                    <div *ngIf="item.org;then hasOrg; else notOrg" ></div>
+                    <span [style.color]="series.brush">{{item.name}}</span><br/>
+                </div>
+                <ng-template #hasOrg>
+                </ng-template>
+                    <ng-template #notOrg>
+                    <span></span>
+                    </ng-template>
+            </ng-template>
+        
+        </div>
+      </div>
+      <div class="col-sm-4">
+          <div class="count-down">
+            <app-count-down [timeDifference]=timeDifference> </app-count-down>       
+          </div>
+          <br>
+
+          <div class="detail-card"  *ngIf="updatesAvailable">
+            <mat-card class="timer">
+                <mat-card-title>Aircraft Tracking Stats</mat-card-title>
+                <mat-divider inset></mat-divider>
+                <br>
+                <mat-card-content>
+                   <div class="details-data">
+                    <span> Total Number of Aircraft<button mat-button color="primary">{{totalNumberOfAircraft}}</button> </span> 
+                   </div>
+                   <div class="details-data">
+                    <span>Average Number of Target Updates Per Aircraft<button mat-button color="primary">{{averageTargetUpdatesPerAircraft}}</button> </span> 
+                   </div>
+                   <div class="details-data">
+                    <span> Aircraft with Least Target Updates<button mat-button color="primary">{{leastTargetUpdatesAircraft }}</button> </span> 
+                   </div>
+                   <div class="details-data">
+                    <span> Aircraft with Most Target Updates<button mat-button  color="primary">{{mostTargetUpdatesAircraft}}</button> </span> 
+                  </div>
+                  
+                  </mat-card-content>
+            </mat-card>
+        </div>
+        
+        
+      </div>
+    </div>
+  </div>
+
+ 

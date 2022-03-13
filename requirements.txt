@@ -1,0 +1,9 @@
+asgiref==3.5.0
+Django==4.0.2
+sqlparse==0.4.2
+djangorestframework==3.13.1
+arrow==1.2.2
+Django==4.0.2
+requests==2.27.1
+setuptools==57.4.0
+django-cors-headers==3.11.0

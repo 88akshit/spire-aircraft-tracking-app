@@ -1,0 +1,19 @@
+
+<mat-card class="timer">
+    <mat-card-title>Next Update</mat-card-title>
+    <mat-card-actions *ngIf="timeDifference>0;else other_content">
+        <button mat-button>{{minutesToDday}} Min</button>
+        <button mat-button>{{secondsToDday}} Seconds</button>
+      </mat-card-actions>
+     <ng-template #other_content>
+        <mat-divider inset></mat-divider>
+        <br>
+         <div>Processing Data Please wait</div>
+         <br>
+        </ng-template>
+        
+    <mat-card-footer>
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </mat-card-footer>
+</mat-card>
+
